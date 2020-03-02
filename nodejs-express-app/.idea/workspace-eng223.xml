@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e3d59317-b823-4528-801c-358f559e3ea7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/intro_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/intro_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/playback_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/playback_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,21 +25,14 @@
     <expand />
     <select />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1272" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="x" value="1672" />
+    <option name="y" value="1" />
+    <option name="width" value="1066" />
+    <option name="height" value="1656" />
   </component>
   <component name="ProjectId" id="1XtUIC76Khq9pRg5FYCGjEg13ER" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -67,10 +58,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jack Madden\OneDrive - GMIT\FinalYearProject\nodejs-express-app\public\pages" />
-    </key>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -91,16 +89,46 @@
       <workItem from="1581988192735" duration="14000" />
       <workItem from="1581989938174" duration="283000" />
       <workItem from="1582032011130" duration="1225000" />
-      <workItem from="1582049641140" duration="600000" />
-      <workItem from="1582058258123" duration="6417000" />
-      <workItem from="1582121772653" duration="64000" />
-      <workItem from="1582127829838" duration="600000" />
-      <workItem from="1582189098041" duration="4436000" />
-      <workItem from="1582273647385" duration="586000" />
-      <workItem from="1582533054906" duration="700000" />
-      <workItem from="1583150652843" duration="1884000" />
+      <workItem from="1582049641140" duration="1197000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2422000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1272" y="-8" width="1040" height="1256" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -110,25 +138,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581987538808" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1583163176466">
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1581990222078">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="981" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1582071669284" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583163176466" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1583163176466">
+    <state width="981" height="348" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1581897055750" />
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581990222078" />
+    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1581990222077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="981" height="253" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1582071669283" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583163176466" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1583163176466">
+    <state width="981" height="348" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1581897055749" />
+    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581990222077" />
+    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1581990222077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="981" height="253" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1582071669283" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583163176466" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1583163176466">
+    <state width="981" height="348" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1581897055749" />
+    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581990222077" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1581990222078">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="981" height="253" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1582071669283" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583163176466" />
+    <state width="981" height="348" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1024.1240@1366.0.1024.1240" timestamp="1581897055749" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581990222078" />
   </component>
 </project>
