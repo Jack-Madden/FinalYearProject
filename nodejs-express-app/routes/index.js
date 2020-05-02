@@ -34,8 +34,15 @@ router.post('/upload', function (req, res, next) {
 }
 );
 
-router.get('/playback_page', function (req, res, next) {
-  res.render('playback_page', {pageTitle: 'Playback'});
+router.get('/playback_page/:audioId', function (req, res, next) {
+  const audId = req.params.audioId;
+  Audio.findById(audId)
+    .then(audio => {
+      res.render('playback_page', {
+        audio: audio,
+        pageTitle: audio.title
+      });
+    });
 });
 
 module.exports = router;
