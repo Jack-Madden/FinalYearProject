@@ -4,15 +4,15 @@ const Audio = require('../models/audio');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'E-Music Box'});
+  res.render('index', {pageTitle: 'E-Music Box'});
 });
 
 router.get('/intro_page', function (req, res, next) {
-  res.render('intro_page', {title: 'E-Music Box'});
+  res.render('intro_page', {pageTitle: 'E-Music Box'});
 });
 
 router.get('/upload', function (req, res, next) {
-  res.render('upload', {title: 'Upload'});
+  res.render('upload', {pageTitle: 'Upload'});
 });
 
 router.post('/upload', function (req, res, next) {
@@ -35,7 +35,7 @@ router.post('/upload', function (req, res, next) {
 );
 
 router.get('/playback_page', function (req, res, next) {
-  res.render('playback_page', {title: 'Playback'});
+  res.render('playback_page', {pageTitle: 'Playback'});
 });
 
 module.exports = router;
