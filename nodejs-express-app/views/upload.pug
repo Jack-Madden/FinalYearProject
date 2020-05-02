@@ -3,6 +3,8 @@ extends layout
 block content
   p
     form(action='/upload', method='post', enctype='multipart/form-data')
-      input(type='text', name='title', id='title', placeholder='title')
-      input(type='file', name='filename', id='filename')
-      button(class='btn', type='submit')Upload
+      input(type="text", name='title', id='title' placeholder='title')
+      input(type="text", name='author', id='author', placeholder='author')
+      input(type='file', name='audio', id='audio')
+      button(class='btn', type='submit')
+        value='Upload'

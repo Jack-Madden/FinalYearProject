@@ -45,6 +45,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/audiofiles', express.static(path.join(__dirname, 'audiofiles')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -67,7 +68,7 @@ app.use(function(err, req, res, next) {
 
 mongoose.connect(mongoUri, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(result => {
-  app.listen(8000);
+  app.listen(3000);
 })
 .catch(err => {
   console.log(err);
