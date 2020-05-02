@@ -1,0 +1,18 @@
+<%- include('./layout.ejs') %>
+</head>
+
+<body class="center">
+    <% if (auds.length > 0) { %>
+        <% for (let audio of auds) { %>
+            <h1>
+                <%= audio.title %>
+            </h1>
+            <a href="/playback_page/<%= audio._id %>" class="btn">Play</a>
+        <% } %>
+    <% } else { %>
+        <h1>
+            Empty!
+        </h1>
+        <% } %>
+</body>
+</html>

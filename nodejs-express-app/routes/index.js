@@ -45,4 +45,14 @@ router.get('/playback_page/:audioId', function (req, res, next) {
     });
 });
 
+router.get('/view_all', function (req, res, next) {
+  Audio.find()
+    .then(audios => {
+      res.render('view_all', {
+        auds: audios,
+        pageTitle: 'All Audio Files'
+      });
+    });
+});
+
 module.exports = router;

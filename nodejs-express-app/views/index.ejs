@@ -1,14 +1,24 @@
 <%- include('./layout.ejs') %>
 </head>
 
+<body class="center">
 <h1>
     <%= pageTitle %>
 </h1>
 <p>
-    <a href="/intro_page" class="btn" type="submit">About</a>
+    <form action="/intro_page">
+        <input class="btn" type="submit" value="About">
+    </form>
 </p>
 <p>
-    <a href="/upload" class="btn" type="submit">Upload Audio</a>
+    <form action="/upload">
+        <input class="btn" type="submit" value="Upload Audio">
+    </form>
+</p>
+<p>
+    <form action="/view_all">
+        <input class="btn" type="submit" value="View Available Files">
+    </form>
 </p>
 </body>
 </html>
