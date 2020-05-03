@@ -7,7 +7,13 @@
             <h1>
                 <%= audio.title %>
             </h1>
-            <a href="/playback/<%= audio._id %>" class="btn">Play</a>
+            <h2>
+                <%= audio.author %>
+            </h2>
+            <form action="/playback/<%= audio._id %>" method="GET">
+                <button class="btn" type="submit">Play</button>
+            </form>
+            <br>
             <form action="/delete" method="POST">
                 <input type="hidden" value="<%= audio._id %>" name="audioId">
                 <button class="btn" type="submit">Delete</button>
