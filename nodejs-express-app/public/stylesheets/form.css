@@ -1,0 +1,25 @@
+.form-control {
+  margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+  display: block;
+  width: 100%;
+}
+
+.form-control input,
+.form-control textarea {
+  font: inherit;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline-color: blue;
+}
+
+.form-control input.invalid,
+.form-control textarea.invalid {
+  border-color: red;
+}
