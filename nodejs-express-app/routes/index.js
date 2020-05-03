@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', {pageTitle: 'E-Music Box'});
 });
 
-router.get('/intro_page', function (req, res, next) {
-  res.render('intro_page', {pageTitle: 'E-Music Box'});
+router.get('/intro', function (req, res, next) {
+  res.render('intro', {pageTitle: 'E-Music Box'});
 });
 
 router.get('/upload', function (req, res, next) {
@@ -34,11 +34,11 @@ router.post('/upload', function (req, res, next) {
 }
 );
 
-router.get('/playback_page/:audioId', function (req, res, next) {
+router.get('/playback/:audioId', function (req, res, next) {
   const audId = req.params.audioId;
   Audio.findById(audId)
     .then(audio => {
-      res.render('playback_page', {
+      res.render('playback', {
         audio: audio,
         pageTitle: audio.title
       });
