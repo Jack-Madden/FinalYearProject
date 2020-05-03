@@ -22,6 +22,10 @@ exports.postUpload = (req, res, next) => {
   });
 };
 
+exports.getDelete = (req, res, next) => {
+    res.render('delete', {pageTitle: 'Delete'});
+  };
+
 exports.postDelete = (req, res, next) => {
   const audId = req.body.audioId;
   Audio.deleteOne({ _id: audId })
