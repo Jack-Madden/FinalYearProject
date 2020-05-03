@@ -22,6 +22,14 @@ exports.postUpload = (req, res, next) => {
   });
 };
 
+exports.postDelete = (req, res, next) => {
+  const audId = req.body.audioId;
+  Audio.deleteOne({ _id: audId })
+  .then(() => {
+      res.redirect('/view_all');
+  });
+};
+
 exports.getPlayback = (req, res, next) => {
   const audId = req.params.audioId;
   Audio.findById(audId)
