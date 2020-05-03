@@ -14,7 +14,7 @@ const audioStorage = multer.diskStorage({
     cb(null, 'audiofiles');
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);
+    cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
   }
 });
 
