@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Audio = require('../models/audio');
+const audioController = require('../controllers/audio');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,48 +11,12 @@ router.get('/intro', function (req, res, next) {
   res.render('intro', {pageTitle: 'E-Music Box'});
 });
 
-router.get('/upload', function (req, res, next) {
-  res.render('upload', {pageTitle: 'Upload'});
-});
+router.get('/upload', audioController.getUpload);
 
-router.post('/upload', function (req, res, next) {
-  const title = req.body.title;
-  const author = req.body.author;
-  const audioFile = req.file;
+router.post('/upload', audioController.postUpload);
 
-  const url = audioFile.path;
+router.get('/playback/:audioId', audioController.getPlayback);
 
-  const audio = new Audio({
-    title: title,
-    author: author,
-    url: url
-  });
-  audio.save()
-  .then(result => {
-    res.redirect('/upload');
-  });
-}
-);
-
-router.get('/playback/:audioId', function (req, res, next) {
-  const audId = req.params.audioId;
-  Audio.findById(audId)
-    .then(audio => {
-      res.render('playback', {
-        audio: audio,
-        pageTitle: audio.title
-      });
-    });
-});
-
-router.get('/view_all', function (req, res, next) {
-  Audio.find()
-    .then(audios => {
-      res.render('view_all', {
-        auds: audios,
-        pageTitle: 'All Audio Files'
-      });
-    });
-});
+router.get('/view_all', audioController.getAll);
 
 module.exports = router;
