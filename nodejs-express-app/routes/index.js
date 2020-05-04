@@ -15,6 +15,8 @@ router.get('/upload', audioController.getUpload);
 
 router.post('/upload', audioController.postUpload);
 
+router.get('/delete/:audioId', audioController.getDelete);
+
 router.post('/delete', audioController.postDelete);
 
 router.get('/playback/:audioId', audioController.getPlayback);
