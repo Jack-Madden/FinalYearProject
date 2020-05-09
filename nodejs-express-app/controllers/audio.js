@@ -69,7 +69,7 @@ exports.getDelete = (req, res, next) => {
   Audio.findById(audId)
   .then(audio => {
     if(audio.accountId.toString() !== req.account._id.toString()) {
-      return res.redirect('/');
+      return res.redirect('/view_all');
     }
     res.render('delete', {
       audio: audio,
