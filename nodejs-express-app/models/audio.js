@@ -14,6 +14,11 @@ const audioSchema = new Schema ({
   url: {
     type: String,
     required: true
+  },
+  accountId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Account',
+    required: true
   }
 });
 

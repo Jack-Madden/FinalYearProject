@@ -11,19 +11,26 @@
                 <%= audio.author %>
             </h2>
             <form action="/playback/<%= audio._id %>" method="GET">
+                <input type="hidden" name="_csrf" value="<%= token %>">
                 <button class="btn" type="submit">Play</button>
             </form>
             <br>
+            <% if (registered) { %>
             <form action="/delete/<%= audio._id %>" method="GET">
+                <input type="hidden" name="_csrf" value="<%= token %>">
                 <button class="btn" type="submit">Delete</button>
             </form>
+            <% } %>
         <% } %>
     <% } else { %>
         <h1>
             Empty!
         </h1>
         <p>
-            <a href="/upload">Click here</a> to add a file.
+            <form action="/upload" method="GET">
+                <input type="hidden" name="_csrf" value="<%= token %>">
+                <button class="btn" type="submit">Add File</button>
+            </form>
         </p>
         <% } %>
 </body>

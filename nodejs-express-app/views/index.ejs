@@ -7,18 +7,42 @@
 </h1>
 <p>
     <form action="/intro">
+        <input type="hidden" name="_csrf" value="<%= token %>">
         <input class="btn" type="submit" value="About">
     </form>
 </p>
 <p>
-    <form action="/upload">
-        <input class="btn" type="submit" value="Upload Audio">
-    </form>
-</p>
-<p>
     <form action="/view_all">
+        <input type="hidden" name="_csrf" value="<%= token %>">
         <input class="btn" type="submit" value="View Available Files">
     </form>
 </p>
+<% if(registered) { %>
+<p>
+    <form action="/upload">
+        <input type="hidden" name="_csrf" value="<%= token %>">
+        <input class="btn" type="submit" value="Upload Audio">
+    </form>
+</p>
+<p>    
+    <form action="/logout" method="POST">
+        <input type="hidden" name="_csrf" value="<%= token %>">
+        <input class="btn" type="submit" value="Log Out">
+    </form>
+</p>
+<% } else { %>
+<p>
+    <form action="/login" method="GET">
+        <input type="hidden" name="_csrf" value="<%= token %>">
+        <input class="btn" type="submit" value="Log In">
+    </form>
+</p>
+<p>
+    <form action="/signup" method="GET">
+        <input type="hidden" name="_csrf" value="<%= token %>">
+        <input class="btn" type="submit" value="Sign Up">
+    </form>
+</p>
+<% } %>
 </body>
 </html>

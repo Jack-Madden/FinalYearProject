@@ -7,7 +7,19 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const mongoUri = "mongodb+srv://Jack:fortyninetyfive@cluster0-u6teg.mongodb.net/test?retryWrites=true&w=majority";
+const MONGOURI = "mongodb+srv://Jack:fortyninetyfive@cluster0-u6teg.mongodb.net/test?retryWrites=true&w=majority";
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const csurf = require('csurf');
+const flash = require('connect-flash');
+const errorController = require('./controllers/error');
+const Account = require('./models/account');
+const mongoStore = new MongoDBStore({
+  uri: MONGOURI,
+  collection: 'sessions'
+});
+
+const csrf = csurf();
 
 const audioStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -31,12 +43,12 @@ const checkFileType = (req, file, cb) => {
   }
 };
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ storage: audioStorage, fileFilter: checkFileType }).single('audio'));
@@ -46,27 +58,56 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/audiofiles', express.static(path.join(__dirname, 'audiofiles')));
+app.use(session({
+  secret: '4655434b20594f55',
+  resave: false,
+  saveUninitialized: false,
+  store: mongoStore
+}));
+app.use(csrf);
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.registered = req.session.isLoggedIn;
+  res.locals.token = req.csrfToken();
+  next();
+});
+
+app.use((req, res, next) => {
+  if(!req.session.account) {
+    return next();
+  }
+  Account.findById(req.session.account._id)
+  .then(account => {
+    if(!account) {
+      return next();
+    }
+    req.account = account;
+    next();
+  })
+  .catch(err => {
+    next(new Error(err));
+  });
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+app.use(errorController.get404);
+
+app.get('/500', errorController.get500);
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  res.status(500).render('500', {
+    pageTitle: 'Error 500',
+    path: '/500',
+    registered: req.session.loggedIn
+  });
 });
 
-mongoose.connect(mongoUri, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(MONGOURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(result => {
   app.listen(3000);
 })

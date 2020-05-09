@@ -7,10 +7,12 @@
     </h1>
     <form action="/delete" method="POST">
         <input type="hidden" value="<%= audio._id %>" name="audioId">
+        <input type="hidden" name="_csrf" value="<%= token %>">
         <button class="btn" type="submit">Yes</button>
     </form>
     <br>
     <form action="/view_all" method="GET">
+        <input type="hidden" name="_csrf" value="<%= token %>">
         <button class="btn" type="submit">No</button>
     </form>
 </body>

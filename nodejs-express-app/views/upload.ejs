@@ -16,11 +16,13 @@
             <label for="audio">Audio File</label>
             <input type="file" name="audio" id="audio">
         </div>
+        <input type="hidden" name="_csrf" value="<%= token %>">
         <button class="btn" type="submit">Upload</button>
     </form>
 </p>
 <p>
     <form action="/" method="GET">
+        <input type="hidden" name="_csrf" value="<%= token %>">
         <button class="btn" type="submit">Back</button>
     </form>
 </p>
