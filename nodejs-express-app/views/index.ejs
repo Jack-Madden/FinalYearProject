@@ -6,12 +6,6 @@
     <%= pageTitle %>
 </h1>
 <p>
-    <form action="/intro">
-        <input type="hidden" name="_csrf" value="<%= token %>">
-        <input class="btn" type="submit" value="About">
-    </form>
-</p>
-<p>
     <form action="/view_all">
         <input type="hidden" name="_csrf" value="<%= token %>">
         <input class="btn" type="submit" value="View Available Files">

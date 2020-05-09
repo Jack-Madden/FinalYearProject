@@ -68,7 +68,7 @@ app.use(csrf);
 app.use(flash());
 
 app.use((req, res, next) => {
-  res.locals.registered = req.session.isLoggedIn;
+  res.locals.registered = req.session.loggedIn;
   res.locals.token = req.csrfToken();
   next();
 });
