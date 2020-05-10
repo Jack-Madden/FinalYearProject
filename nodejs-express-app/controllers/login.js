@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const Account = require('../models/account');
 
-exports.getLogin = (req, res, next) => {
+exports.getLogin = (req, res, _next) => {
   let message = req.flash('error');
   if (message.length > 0) {
     message = message[0];
@@ -66,7 +66,7 @@ exports.postLogin = (req, res, next) => {
   });
 };
 
-exports.getSignup = (req, res, next) => {
+exports.getSignup = (req, res, _next) => {
   let message = req.flash('error');
   if (message.length > 0) {
     message = message[0];
@@ -102,7 +102,7 @@ exports.postSignup = (req, res, next) => {
     });
     return account.save();
   })
-  .then(result => {
+  .then(() => {
     res.redirect('/login');
   })
   .catch(err => {
@@ -112,7 +112,7 @@ exports.postSignup = (req, res, next) => {
   });
 };
 
-exports.postLogout = (req, res, next) => {
+exports.postLogout = (req, res, _next) => {
   req.session.destroy(err => {
     console.log(err);
     res.redirect('/');

@@ -54,7 +54,7 @@ exports.postUpload = (req, res, next) => {
     accountId: req.account
   });
   audio.save()
-  .then(result => {
+  .then(() => {
     res.redirect('/upload');
   })
   .catch(err => {
@@ -115,7 +115,7 @@ exports.getPlayback = (req, res, next) => {
   });
 };
 
-exports.getAll = (req, res, next) => {
+exports.getAll = (_req, res, next) => {
   Audio.find()
   .then(audios => {
     res.render('view_all', {

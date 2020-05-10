@@ -1,4 +1,3 @@
-const createError = require('http-errors');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -22,7 +21,7 @@ const mongoStore = new MongoDBStore({
 const csrf = csurf();
 
 const audioStorage = multer.diskStorage({
-  destination: (req, file, cb) => {
+  destination: (_req, _file, cb) => {
     cb(null, 'audiofiles');
   },
   filename: (req, file, cb) => {
@@ -30,7 +29,7 @@ const audioStorage = multer.diskStorage({
   }
 });
 
-const checkFileType = (req, file, cb) => {
+const checkFileType = (_req, file, cb) => {
   if(
     file.mimetype === 'audio/wav' ||
     file.mimetype === 'audio/mpeg' ||
@@ -48,7 +47,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ storage: audioStorage, fileFilter: checkFileType }).single('audio'));
@@ -73,7 +71,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
+app.use((req, _res, next) => {
   if(!req.session.account) {
     return next();
   }
@@ -91,7 +89,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(errorController.get404);
@@ -99,7 +96,7 @@ app.use(errorController.get404);
 app.get('/500', errorController.get500);
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(_err, req, res, _next) {
   res.status(500).render('500', {
     pageTitle: 'Error 500',
     path: '/500',
@@ -108,7 +105,7 @@ app.use(function(err, req, res, next) {
 });
 
 mongoose.connect(MONGOURI, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(result => {
+.then(() => {
   app.listen(3000);
 })
 .catch(err => {

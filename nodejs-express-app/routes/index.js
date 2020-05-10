@@ -7,11 +7,11 @@ const loggedIn = require('../middleware/logged_in');
 const Account = require('../models/account');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(_req, res, _next) {
   res.render('index', {pageTitle: 'E-Music Box'});
 });
 
-router.get('/intro', function (req, res, next) {
+router.get('/intro', function (_req, res, _next) {
   res.render('intro', {pageTitle: 'About'});
 });
 

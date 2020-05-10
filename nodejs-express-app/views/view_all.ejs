@@ -26,12 +26,10 @@
         <h1>
             Empty!
         </h1>
-        <p>
-            <form action="/upload" method="GET">
-                <input type="hidden" name="_csrf" value="<%= token %>">
-                <button class="btn" type="submit">Add File</button>
-            </form>
-        </p>
+        <form action="/upload" method="GET">
+            <input type="hidden" name="_csrf" value="<%= token %>">
+            <button class="btn" type="submit">Add File</button>
+        </form>
         <% } %>
 </body>
 </html>
