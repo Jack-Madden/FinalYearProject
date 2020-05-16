@@ -106,7 +106,7 @@ app.use(function(_err, req, res, _next) {
 
 mongoose.connect(MONGOURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
-  app.listen(3000);
+  app.listen(8000);
 })
 .catch(err => {
   console.log(err);
